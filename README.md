@@ -15,3 +15,15 @@ Some References:
 (i)  http://www.fredosaurus.com/notes-cpp/newdelete/50dynamalloc.html
 
 (ii) http://www.cplusplus.com/doc/tutorial/dynamic/
+
+
+* * *
+## Project Author  
+
+**Vishisht Priyadarshi**  
+
+B.Tech Undergraduate (Mathematics and Computing)  
+Indian Institute of Technology Guwahati  
+India
+
+[LinkedIn](https://www.linkedin.com/in/vishisht-priyadarshi-34068b179?fbclid=IwAR2gKntA7S027YRocf9gXuaoQS_g7tm8vTGjNJColC99v4UkZN4d9s6YhWw)

@@ -27,7 +27,8 @@ Some References:
 (i)   http://www.fredosaurus.com/notes-cpp/newdelete/50dynamalloc.html   
 (ii)  http://www.cplusplus.com/doc/tutorial/dynamic/   
 (iii) https://stackoverflow.com/questions/936687/how-do-i-declare-a-2d-array-in-c-using-new   
-(iv)  https://www.tutorialcup.com/cplusplus/dynamic-memory.htm
+(iv)  https://www.tutorialcup.com/cplusplus/dynamic-memory.htm   
+(v)   https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays
 
 
 

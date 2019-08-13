@@ -33,7 +33,10 @@ Some References:
 
 ### 2. Stacks   
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).   
-It is an **abstract data type**.   
+It is an **abstract data type**.      
+
+![Stacks](http://underthepressure.net/wp-content/uploads/2018/05/stack_representation-300x207.jpg)   
+
 
 Mainly the following three basic operations are performed in the stack:
 
@@ -48,7 +51,7 @@ push(), pop(), top() all take **O(1)** time.
 
 This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.      
 
-![Stacks](http://underthepressure.net/wp-content/uploads/2018/05/stack_representation-300x207.jpg)
+
 
 * * *
 ## Project Author  

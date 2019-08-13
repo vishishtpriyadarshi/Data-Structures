@@ -19,7 +19,7 @@ for(int i = 0; i < rowCount; ++i)
 
 ```   
 The above, for colCount= 5 and rowCount = 4, would produce the following:   
-![alt text](https://i.stack.imgur.com/M75kn.png)   
+![Multidimensional Dynamic Array](https://i.stack.imgur.com/M75kn.png)   
 
 
 Some References:
@@ -46,8 +46,9 @@ Time Complexities of operations on stack:
 
 push(), pop(), top() all take **O(1)** time.  
 
-This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.   
+This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.      
 
+![Stacks](http://underthepressure.net/wp-content/uploads/2018/05/stack_representation-300x207.jpg)
 
 * * *
 ## Project Author  

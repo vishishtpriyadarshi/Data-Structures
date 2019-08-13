@@ -28,9 +28,25 @@ Some References:
 (ii)  http://www.cplusplus.com/doc/tutorial/dynamic/   
 (iii) https://stackoverflow.com/questions/936687/how-do-i-declare-a-2d-array-in-c-using-new   
 (iv)  https://www.tutorialcup.com/cplusplus/dynamic-memory.htm   
-(v)   https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays
+(v)   https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays   
 
 
+### 2. Stacks   
+Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).   
+It is an **abstract data type**.   
+
+Mainly the following three basic operations are performed in the stack:
+
+(i) **Push**: Adds an item in the stack. If the stack is full, then it is said to be an Overflow condition.   
+(ii) **Pop**: Removes an item from the stack. The items are popped in the reversed order in which they are pushed. If the stack is empty, then it is said to be an Underflow condition.   
+(iii) **Top**: Returns top element of stack.
+
+**TIME COMPLEXITY of Various Operations:**   
+Time Complexities of operations on stack:
+
+push(), pop(), top() all take **O(1)** time.  
+
+This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.   
 
 
 * * *

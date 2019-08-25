@@ -51,7 +51,21 @@ push(), pop(), top() all take **O(1)** time.
 
 This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.      
 
+### 3. Queues   
+A queue is a data structure where we add elements at the back and remove elements from the front. In that way a queue is like “waiting in line”.   
+The first one to be added to the queue will be the first one to be removed from the queue. This is also called a **FIFO (First In First Out) data structure**.   
 
+Mainly the following three basic operations are performed in the stack:
+
+(i) **Enqueue**: Adds an item in the queue. If the queue is full, then it is said to be an Overflow condition.   
+(ii) **Dequeue**: Removes an item from the back of Queue.   
+(iii) **Front**: Returns beginning element of Queue.   
+(iv) **Rear**: Returns last entered element of Queue.   
+
+#### => Visualisation of Circular Queue:   
+In our Implementation, the size of Queue is **MAX_SIZE - 1**.   
+
+i) ![Queues]C:\Users\Vishisht Priyadarshi\Pictures\Screenshots\Q1.png)    
 
 * * *
 ## Project Author  

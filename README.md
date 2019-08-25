@@ -65,7 +65,7 @@ Mainly the following three basic operations are performed in the stack:
 #### => Visualisation of Circular Queue:   
 In our Implementation, the size of Queue is **MAX_SIZE - 1**.   
 
-i) ![Queues]C:\Users\Vishisht Priyadarshi\Pictures\Screenshots\Q1.png)    
+i) ![Queues]Img\Q1.png)    
 
 * * *
 ## Project Author  

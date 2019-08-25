@@ -30,6 +30,7 @@ Some References:
 (iv)  https://www.tutorialcup.com/cplusplus/dynamic-memory.htm   
 (v)   https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays   
 
+* * *
 
 ### 2. Stacks   
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).   
@@ -51,6 +52,7 @@ push(), pop(), top() all take **O(1)** time.
 
 This is because of random acess property of Arrays (if implemented using arrays), and also as no looping condition is present in its implementation.      
 
+* * *
 ### 3. Queues   
 A queue is a data structure where we add elements at the back and remove elements from the front. In that way a queue is like “waiting in line”.   
 The first one to be added to the queue will be the first one to be removed from the queue. This is also called a **FIFO (First In First Out) data structure**.   
@@ -65,13 +67,13 @@ Mainly the following three basic operations are performed in the stack:
 #### => Visualisation of Circular Queue:   
 In our Implementation, the size of Queue is **MAX_SIZE - 1**.   
 
-i)   ![Queues](Img\Q1.png)   
-ii)  ![Queues](Img\Q2.png)   
-iii) ![Queues](Img\Q3.png)   
-iv)  ![Queues](Img\Q4.png)   
-v)   ![Queues](Img\Q5.png)   
-vi)  ![Queues](Img\Q6.png)   
-vii) ![Queues](Img\Q7.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q1.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q2.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q3.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q4.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q5.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q6.png)   
+   ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q7.png)   
 
 * * *
 ## Project Author  

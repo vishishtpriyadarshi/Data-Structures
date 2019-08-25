@@ -64,7 +64,7 @@ Mainly the following three basic operations are performed in the stack:
 (iii) **Front**: Returns beginning element of Queue.   
 (iv) **Rear**: Returns last entered element of Queue.   
 
-#### => Visualisation of Circular Queue:   
+## => Visualisation of Circular Queue:   
 In our Implementation, the size of Queue is **MAX_SIZE - 1**.   
 
    ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q1.png)   

@@ -4,7 +4,7 @@
 1. [Dynamic Arrays](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#1-dynamic-arrays)   
 2. [Stacks](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#2-stacks)   
 3. [Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#3-queues)   
-
+4. [Linked Lists](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#4-linked-lists 
 * * *   
 
 ### 1. Dynamic Arrays
@@ -82,7 +82,12 @@ In our Implementation, the size of Queue is **MAX_SIZE - 1**.
    ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q6.png)   
    ![Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures/blob/master/Img/Q7.png)   
 
-* * *
+* * *    
+### 4. Linked Lists   
+A linked list is a linear data structure where each element is a separate object.   
+
+* * *   
+
 ## Project Author  
 
 **Vishisht Priyadarshi**  

@@ -27,7 +27,9 @@ class LinkedList
         int insertBegin(int e);              // Inserts an element at the beginning
 
         int insertRand(int e, int pos);      // Inserts an element at any Random specified position
-
+        
+        int insertLast(int e);               // Inserts an element at the end of List
+    
         int deleteBegin();                   // Deletes an element from beginning
 
         int deleteRand(int pos);             // Deletes an elememt from any random specified position
@@ -97,6 +99,34 @@ int LinkedList::insertRand(int e, int pos)
     }
 
     return 0;                                    // Flag = 0 shows unable to find the specified position
+}
+
+
+int LinkedList::insertLast(int e)
+{
+    Node *newNode = new Node;
+
+    if(newNode == nullptr)                    // If Creation of Node fails
+        return -1;
+
+    newNode->a = e;
+    Node *curr = head;
+
+    while(curr != nullptr)
+    {
+
+        if(curr->next == nullptr)              // Found the position
+        {
+            curr->next = newNode;
+            newNode->next = nullptr;
+
+            return 1;
+        }
+        curr = curr->next;
+    }
+
+    return 0;                                    // Flag = 0 shows unable to find the specified position
+
 }
 
 

@@ -80,7 +80,7 @@ int LinkedList::insertRand(int e, int pos)
     newNode->a = e;
     Node *curr = head->next;
     Node *prev = head;
-    int pn = 0;
+    int pn = 1;
 
     while(curr != nullptr)
     {
@@ -88,7 +88,7 @@ int LinkedList::insertRand(int e, int pos)
         if(pn == pos)                           // Found the position
         {
             prev->next = newNode;
-            newNode->next = curr->next;
+            newNode->next = curr;
 
             return 1;
         }

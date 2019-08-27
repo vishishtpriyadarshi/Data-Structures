@@ -4,7 +4,7 @@
 1. [Dynamic Arrays](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#1-dynamic-arrays)   
 2. [Stacks](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#2-stacks)   
 3. [Queues](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#3-queues)   
-4. [Linked Lists](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#4-linked-lists 
+4. [Linked Lists](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#4-linked-lists)
 * * *   
 
 ### 1. Dynamic Arrays

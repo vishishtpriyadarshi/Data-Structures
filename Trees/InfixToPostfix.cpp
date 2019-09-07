@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int comp(char c1)
+int comp(char c1)                               // Finds Precedence of the operators
 {
     if (c1 == '^')
         return 3;
@@ -21,15 +21,15 @@ int comp(char c1)
 string toPostfix(string s)
 {
     int l = s.length();
-    string ans = "";
+    string ans = "";                            // stores final Postfix Expression
     stack <char> a;
-    int f = 0;
+    int f = 0;                                  // Flag to denote presence of ( in Stack
     for(int i = 0; i < l; i++)
     {
         char c = s.at(i);
         if(c == '^' || c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')')
         {
-            if( f == 1 || c == '(')
+            if( f == 1 || c == '(')              // if ( is stored in stack OR ( is encountered first time 
             {
                 if(c == '(')
                 {
@@ -37,7 +37,7 @@ string toPostfix(string s)
                     a.push(c);
                 }
 
-                else if(c != ')')
+                else if(c != ')')                 // Orders the operands inside parantheses
                 {
                     if(a.empty())
                         a.push(c);
@@ -53,7 +53,7 @@ string toPostfix(string s)
                         a.push(c);
                     }
                 }
-                else
+                else                                // encountered )
                 {
                     while(a.top() != '(')
                     {
@@ -61,12 +61,12 @@ string toPostfix(string s)
                         a.pop();
                     }
                     a.pop();
-                    f = 0;
+                    f = 0;                           // Resest to 0 as no parantheses left
                 }
 
 
             }
-            else
+            else                                     // Orders the elements which are not inside parantheses
             {
                 if(a.empty())
                     a.push(c);
@@ -84,12 +84,12 @@ string toPostfix(string s)
             }
 
         }
-        else
-            ans+=c;
+        else 
+            ans+=c;                                   // Adding Operands
     }
     while(!a.empty())
     {
-        ans+=a.top();
+        ans+=a.top();                                 // Emptying stack of left operations
         a.pop();
     }
     

@@ -40,17 +40,17 @@ string toPostfix(string s)
     int l = s.length();
     string ans = "";                            // stores final Postfix Expression
     stack <char> a;
-    int f = 0;                                  // Flag to denote presence of ( in Stack
+    int f = 0;                                  // Counter to count number of ( in Stack
     for(int i = 0; i < l; i++)
     {
         char c = s.at(i);
         if(c == '^' || c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')')
         {
-            if( f == 1 || c == '(')             // if ( is stored in stack OR ( is encountered first time
+            if( f > 0 || c == '(')             // if ( is stored in stack OR ( is encountered first time
             {
                 if(c == '(')
                 {
-                    f = 1;
+                    f++;
                     a.push(c);
                 }
 
@@ -78,7 +78,7 @@ string toPostfix(string s)
                         a.pop();
                     }
                     a.pop();
-                    f = 0;                       // Resest to 0 as no parantheses left
+                    f--;                        // Dcrease ( count by 1
                 }
 
 

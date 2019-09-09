@@ -2,10 +2,6 @@
 // Created by Vishisht Priyadarshi on 07-09-2019.
 //
 
-//
-// Created by Vishisht Priyadarshi on 07-09-2019.
-//
-
 #include <iostream>
 #include <string>
 #include <stack>

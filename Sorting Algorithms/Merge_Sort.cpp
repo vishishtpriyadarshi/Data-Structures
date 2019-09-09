@@ -8,6 +8,10 @@
 using namespace std;
 #define MAX INT_MAX
 
+// =====================================
+//           PRINT
+// =====================================
+
 void print(int *a, int size)
 {
     for(int i = 0; i < size; i++)
@@ -15,7 +19,13 @@ void print(int *a, int size)
     cout << "\n\n";
 }
 
-void merge(int *a, int p, int q, int r)  // Merge subarray1 -> (p - q) & subarray2 -> (q + 1 - r)
+
+
+// =====================================
+//           MERGE PROCEDURE
+// =====================================
+
+void merge(int *a, int p, int q, int r)  // Merge subarray1 -> (p to q) & subarray2 -> (q + 1 to r )
  {
     int n1 = q - p + 1 ;                 // n1 = size of subarray1
     int n2 = r - q;                      // n2 = size of subarray2
@@ -25,7 +35,7 @@ void merge(int *a, int p, int q, int r)  // Merge subarray1 -> (p - q) & subarra
 
     for(int i = 0; i < n1; i++)
         L[i] = a[p+i];                   // Copying from pth index of array a till qth index(included)
-    L[n1] = MAX;                         // Adding sentinel value
+    L[n1] = MAX;                         // Adding sentinel value ( for Boundary Conditions )
 
     //print(L,n1+1);
 
@@ -56,6 +66,14 @@ void merge(int *a, int p, int q, int r)  // Merge subarray1 -> (p - q) & subarra
     //cout << "**************\n";
 }
 
+
+
+
+// =================================
+//        MERGE SORT
+// =================================
+
+
 void mergeSort(int *a, int p, int r)    // Index r is included ,i.e., initially r = size - 1
 {
     if(p<r)
@@ -69,6 +87,9 @@ void mergeSort(int *a, int p, int r)    // Index r is included ,i.e., initially 
 }
 
 
+// =====================================
+//              MAIN
+// =====================================
 
 int main()
 {

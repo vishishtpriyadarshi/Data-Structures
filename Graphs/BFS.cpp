@@ -174,3 +174,9 @@ int main()
 
     return 0;
 }
+
+
+
+/* NOTE:
+Maintain a different set of vertices and use that to make changes in predecessor, color, ...
+Use Adjacency List to just see the adjacent sides and make changes to the vertex vector/array/list.

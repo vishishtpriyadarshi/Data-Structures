@@ -1,4 +1,4 @@
-# MA-251-Data-Structures
+# Data-Structures
 
 ## TABLE OF CONTENTS:   
 1. [Dynamic Arrays](https://github.com/vishishtpriyadarshi/MA-251-Data-Structures#1-dynamic-arrays)   

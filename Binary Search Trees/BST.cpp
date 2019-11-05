@@ -459,13 +459,9 @@ int main()
             cout << "10.    MENU            -> Prints Menu\n";
             cout << "11.    EXIT            -> Exits the MENU\n\n";
         }
-
-
         cin >> str;
     }
-
-
-
+    
     return 0;
 }
 

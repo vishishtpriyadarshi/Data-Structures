@@ -136,8 +136,11 @@ node *successor(node *root)
         while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
         {
             root = root->parent;
-            if(root == root->parent->left)
-                return root;                    // Current node is the left child
+            if(root->parent != NULL)
+            {
+                if(root == root->parent->left)
+                    return root;                // Current node is the left child
+            }
         }
         return root;
     }
@@ -152,8 +155,11 @@ node *predecessor(node *root)
         while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
         {
             root = root->parent;
-            if(root == root->parent->right)     // Current node is the right child
-                return root;
+            if(root->parent != NULL)
+            {
+                if(root == root->parent->right) // Current node is the right child
+                    return root;
+            }
         }
         return root;
     }
@@ -210,8 +216,12 @@ void Transplant(node *root, node *initial, node *final)
         final->parent->right = NULL;
 
 
-    if(initial->parent == NULL)
+    if(initial->parent == NULL) {                           // If Node to be deleted is the Root Node
         root->key = final->key;
+        final->left = initial->left;
+        root->right = final->right;
+
+    }
     else if(initial == initial->parent->left)
         initial->parent->left = final;
     else if(initial == initial->parent->right)
@@ -258,13 +268,11 @@ void deleteNode(node *root, node *delNode)
             Transplant(root, delNode, y);
             y->right = delNode->right;
             y->left = delNode->left;
-            //cout << "\n\nYEAH\n\n";
-
         }
         else                                                   // CASE 3.(b) : Successor has 1 child (THESE ARE THE ONLY CASES
         {                                                      //                2 Children of successor isn't possible)
             node *temp = delNode;
-            if(y == delNode->parent->left)
+            /*if(y == delNode->parent->left)
             {
                 delNode->parent->left = y;
                 if(y->right == NULL)
@@ -278,7 +286,21 @@ void deleteNode(node *root, node *delNode)
                     y->right = delNode->left;
                 else
                     y->left = delNode->left;
+            }*/
+
+            /*if(y->right != NULL)
+            {
+                Transplant(root, y, y->right);
             }
+            else
+                Transplant(root, y, y->left);*/
+
+            Transplant(root, delNode, y);           // Replaces the node to be deleted with its successor
+            //y->right = delNode->right;
+            //y->left = temp->left;
+            y->left = delNode->left;                // As Successor will always be in right subtree and left one needs to be joined to it
+
+            cout << "\\n\nYEAH\n\n";
 
 
         }
@@ -293,7 +315,7 @@ void deleteNode(node *root, node *delNode)
 int main()
 {
     node *root = create();
-    root->key = 15;
+    /*root->key = 15;
     root->parent = NULL;
     add(root, 15);
     add(root, 5);
@@ -317,7 +339,132 @@ int main()
     deleteNode(root, find(root,12));
     printBST(root);
     cout << "\n";
-    inorder(root);
+    inorder(root);*/
+
+    cout << "********** MENU **********:\n\n";
+    cout << "1.     ADD x           -> Inserts node with value = x\n";
+    cout << "2.     DEL x           -> Deletes node with value = x\n";
+    cout << "3.     SUCCESSOR x     -> Finds successor of x\n";
+    cout << "4.     PREDECESSOR x   -> Finds predecessor of x\n";
+    cout << "5.     MAX             -> Finds maximum value in BST\n";
+    cout << "6.     MIN             -> Finds minimum valur in BST\n";
+    cout << "7.     INORDER         -> Prints Inorder Traversal\n";
+    cout << "8.     PRINT2D         -> Prints BST in 2D Form\n";
+    cout << "9.     EXISTS x        -> Checks if x exists in BST\n";
+    cout << "10.    MENU            -> Prints Menu\n";
+    cout << "11.    EXIT            -> Exits the MENU\n\n";
+
+    string str;
+    cin >> str;
+
+    int i = 0;
+    while(str != "EXIT")
+    {
+        if(str == "ADD")
+        {
+            int x;
+            cin >> x;
+            if(i == 0) {
+                root->key = x;
+                root->parent = NULL;
+                i++;
+            }
+            else
+                add(root, x);
+        }
+        else if(str == "DEL")
+        {
+            int x;
+            cin >> x;
+            if(x == find(root, x)->key)
+                deleteNode(root, find(root,x));
+            else
+                cout << "\nValue doesn't exist in the BST\n";
+        }
+        else if(str == "SUCCESSOR")
+        {
+            int x;
+            cin >> x;
+            if(x == find(root, x)->key)
+            {
+                if(successor(find(root, x))->parent == NULL)
+                    cout << "\nDoesnt Exist\n";
+                else
+                    cout << "\n" << successor(find(root,x))->key << "\n";
+            } else
+                cout << "\nValue doesn't exists in the BST\n";
+
+        }
+        else if(str == "PREDECESSOR")
+        {
+            int x;
+            cin >> x;
+            if(x == find(root, x)->key)
+            {
+                if(predecessor(find(root, x))->parent == NULL)
+                    cout << "\nDoesnt Exist\n";
+                else
+                    cout << "\n" << predecessor(find(root,x))->key << "\n";
+            } else
+                cout << "\nValue doesn't exists in the BST\n";
+
+        }
+        else if(str == "MAX")
+            cout << "Mximum Value = " << maximum(root)->key << "\n";
+        else if(str == "MIN")
+            cout << "Minimum Value = " << minimum(root)->key << "\n";
+        else if(str == "INORDER") {
+            inorder(root);
+            cout << "\n\n";
+        }
+        else if(str == "PRINT2D")
+            printBST(root);
+        else if(str == "MENU")
+        {
+            cout << "********** MENU **********:\n\n";
+            cout << "1.     ADD x           -> Inserts node with value = x\n";
+            cout << "2.     DEL x           -> Deletes node with value = x\n";
+            cout << "3.     SUCCESSOR x     -> Finds successor of x\n";
+            cout << "4.     PREDECESSOR x   -> Finds predecessor of x\n";
+            cout << "5.     MAX             -> Finds maximum value in BST\n";
+            cout << "6.     MIN             -> Finds minimum valur in BST\n";
+            cout << "7.     INORDER         -> Prints Inorder Traversal\n";
+            cout << "8.     PRINT2D         -> Prints BST in 2D Form\n";
+            cout << "9.     EXISTS x        -> Checks if x exists in BST\n";
+            cout << "10.    MENU            -> Prints Menu\n";
+            cout << "11.    EXIT            -> Exits the MENU\n\n";
+        }
+        else if(str == "EXISTS")
+        {
+            int x;
+            cin >> x;
+            if(x == find(root, x)->key)
+                cout << "\nValue exists in BST\n";
+            else
+                cout << "\nValue doesn't exist in BST\n";
+        }
+        else
+        {
+            cout << "\nWrong INPUT\n\n";
+            cout << "********** MENU **********:\n\n";
+            cout << "1.     ADD x           -> Inserts node with value = x\n";
+            cout << "2.     DEL x           -> Deletes node with value = x\n";
+            cout << "3.     SUCCESSOR x     -> Finds successor of x\n";
+            cout << "4.     PREDECESSOR x   -> Finds predecessor of x\n";
+            cout << "5.     MAX             -> Finds maximum value in BST\n";
+            cout << "6.     MIN             -> Finds minimum valur in BST\n";
+            cout << "7.     INORDER         -> Prints Inorder Traversal\n";
+            cout << "8.     PRINT2D         -> Prints BST in 2D Form\n";
+            cout << "9.     EXISTS x        -> Checks if x exists in BST\n";
+            cout << "10.    MENU            -> Prints Menu\n";
+            cout << "11.    EXIT            -> Exits the MENU\n\n";
+        }
+
+
+        cin >> str;
+    }
+
+
 
     return 0;
 }

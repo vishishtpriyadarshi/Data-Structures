@@ -1,5 +1,5 @@
 //
-// Created by Vishisht Priyadarshi on 04-11-2019.
+// Created by Vishisht Priyadarshi on 06-11-2019.
 //
 
 #include <bits/stdc++.h>
@@ -16,6 +16,11 @@ struct node
     node *parent;
 };
 
+
+
+// ========================
+// Creates a Node
+// ========================
 node *create()
 {
     node *n = new node;
@@ -26,6 +31,7 @@ node *create()
 
     return n;
 }
+
 
 
 
@@ -46,6 +52,7 @@ node* find(node *root, int key)     // If key is not available, it returns the l
 
     return n;
 }
+
 
 
 
@@ -82,6 +89,8 @@ void add(node *root, int key)
 }
 
 
+
+
 // ======================
 // Inorder Traversal
 // ======================
@@ -97,10 +106,10 @@ void inorder(node *root)
 }
 
 
+
 // ================================
 // Minimum & Maximum keys in BST
 // ================================
-
 node* minimum(node *root)
 {
     while(root->left != NULL)
@@ -123,17 +132,19 @@ node* maximum(node *root)
 }
 
 
+
+
+
 // ===========================================
 // Successor and Predecessor of a Given Node
 // ===========================================
-
 node *successor(node *root)
 {
     if(root->right != NULL)
         return minimum(root->right);
     else
     {
-        while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
+        /*while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
         {
             root = root->parent;
             if(root->parent != NULL)
@@ -141,6 +152,24 @@ node *successor(node *root)
                 if(root == root->parent->left)
                     return root;                // Current node is the left child
             }
+        }
+        return root;*/
+        if(root == root->parent->left)
+          return root->parent;
+        else
+        {
+          while(1)
+          {
+            root = root->parent;
+            if(root->parent != NULL)
+            {
+              if(root == root->parent->left)
+                return root->parent;                // Current node is the left child
+            }
+            else
+              break;
+          
+          }
         }
         return root;
     }
@@ -152,7 +181,7 @@ node *predecessor(node *root)
         return maximum(root->left);
     else
     {
-        while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
+       /* while(root->parent != NULL)             // Traverse upwards till reaches at the top of BST
         {
             root = root->parent;
             if(root->parent != NULL)
@@ -161,7 +190,25 @@ node *predecessor(node *root)
                     return root;
             }
         }
-        return root;
+        return root;*/
+       
+       if(root == root->parent->right)
+         return root->parent;
+       else
+       {
+         while(1)
+         {
+           root = root->parent;
+           if(root->parent != NULL)
+           {
+             if(root == root->parent->right)
+               return root->parent;                // Current node is the left child
+           }
+           else
+             break;
+         }
+       }
+       return root;
     }
 }
 
@@ -170,34 +217,24 @@ node *predecessor(node *root)
 // ============================================
 // 2D Printing of a BST
 // ============================================
-
 void print2DUtil(node *root, int space)
 {
-    // Base case
     if (root == NULL)
         return;
-
-    // Increase distance between levels
     space += COUNT;
 
-    // Process right child first
     print2DUtil(root->right, space);
-
-    // Print current node after space
-    // count
-    cout<<endl;
+    cout << endl;
     for (int i = COUNT; i < space; i++)
-        cout<<" ";
-    cout<<root->key<<"\n";
+        cout << " ";
+    cout << root->key << "\n";
 
-    // Process left child
     print2DUtil(root->left, space);
 }
 
 
 void printBST(node *root)
 {
-    // Pass initial space count as 0
     print2DUtil(root, 0);
 }
 
@@ -207,7 +244,6 @@ void printBST(node *root)
 // ===========================================================================
 // Exchanges the initial and final nodes but their child nodes aren't handled
 // ===========================================================================
-
 void Transplant(node *root, node *initial, node *final)
 {
     if(final->parent->left == final)
@@ -229,10 +265,11 @@ void Transplant(node *root, node *initial, node *final)
 
 }
 
+
+
 // ==============================================
 // Node Deletion
 // ==============================================
-
 void deleteNode(node *root, node *delNode)
 {
     if(delNode->left == NULL && delNode->right == NULL)         // CASE 1: delNode has no children
@@ -309,6 +346,8 @@ void deleteNode(node *root, node *delNode)
 
 }
 
+
+
 // =====================================
 // MAIN METHOD
 // =====================================
@@ -330,10 +369,7 @@ int main()
     add(root, 18);
     add(root, 23);
     add(root, 14);
-
-
     // SOME QUERIES
-
     cout << "\n\nMinimum = " << minimum(root)->key;
     cout << "\n\nSuccessor = " << successor(find(root, 15))->key;
     deleteNode(root, find(root,12));
@@ -387,8 +423,10 @@ int main()
             cin >> x;
             if(x == find(root, x)->key)
             {
-                if(successor(find(root, x))->parent == NULL)
-                    cout << "\nDoesnt Exist\n";
+                if(x == maximum(root)->key)
+                  cout << "\nDoesn't Exist\n\n";
+                /*if(successor(find(root, x))->parent == NULL)
+                    cout << "\nDoesnt Exist\n";*/
                 else
                     cout << "\n" << successor(find(root,x))->key << "\n";
             } else
@@ -401,8 +439,10 @@ int main()
             cin >> x;
             if(x == find(root, x)->key)
             {
-                if(predecessor(find(root, x))->parent == NULL)
-                    cout << "\nDoesnt Exist\n";
+                if(x == minimum(root)->key)
+                  cout << "\nDoesn't Exist\n\n";
+                /*if(predecessor(find(root, x))->parent == NULL)
+                    cout << "\nDoesnt Exist\n";*/
                 else
                     cout << "\n" << predecessor(find(root,x))->key << "\n";
             } else
@@ -464,5 +504,3 @@ int main()
     
     return 0;
 }
-
-

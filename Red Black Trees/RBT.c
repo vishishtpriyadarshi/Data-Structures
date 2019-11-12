@@ -344,27 +344,32 @@ void rbdelete(NODEPTR *treeroot, int z)
 }
  
  
- 
+void Menu()
+{
+    printf("************* MENU **************\n1. Insert\n2. Search\n3. Inorder Walk\n4. Minimum\n5. Maximum\n6. Successor\n7. Predecessor\n8. Delete\n9. Menu\n0. Exit\n\n");
+}
 main()
 {
 	NIL.left = NIL.right = NIL.p = NILPTR;
 	NIL.color = BLACK;
 	NODEPTR tree = NILPTR;
 	int n;
+	Menu();
+	
 	while (1) 
-  {
-		printf("************* MENU **************\n1.Insert\n2.Search\n3.Inorder Walk\n4.Minimum\n5.Maximum\n6.Successor\n7.Predecessor\n8.Delete\n9.Exit\n");
+    {
+		
 		scanf("%d", &n);
 		if (n == 1)
-    {
-			printf("Enter any number:\n");
+        {
+			//printf("Enter any number:\n");
 			int num;
 			scanf("%d", &num);
 			rbinsert(&tree, num);
 		}
 		else if (n == 2) 
-    {
-			printf("Enter the number to be search\n");
+        {
+			//printf("Enter the number to be search\n");
 			int num;
 			scanf("%d", &num);
 			if (search(tree, num) == NILPTR)
@@ -373,7 +378,7 @@ main()
 				printf("%d found\n", num);
 		}
 		else if (n == 3)
-    {
+        {
 			inorder(tree);
 			printf("\n");
 		}
@@ -382,7 +387,7 @@ main()
 		else if (n == 5)
 			printf("%d\n", maximum(tree)->key);
 		else if (n == 6) {
-			printf("Enter the number whose successor needs to be found\n");
+			//printf("Enter the number whose successor needs to be found\n");
 			int num;
 			scanf("%d", &num);
 			NODEPTR t = successor(tree, num);
@@ -390,8 +395,8 @@ main()
 				printf("%d\n", t->key);
 		}
 		else if (n == 7)
-    {
-			printf("Enter the number whose predecessor needs to be found\n");
+        {
+			//printf("Enter the number whose predecessor needs to be found\n");
 			int num;
 			scanf("%d", &num);
 			NODEPTR t = predecessor(tree, num);
@@ -399,13 +404,15 @@ main()
 				printf("%d\n", t->key);
 		}
 		else if (n == 8) 
-    {
-			printf("Enter the number to be deleted\n");
+        {
+			//printf("Enter the number to be deleted\n");
 			int num;
 			scanf("%d", &num);
 			rbdelete(&tree, num);
 		}
-		else 
+		else if (n == 9)
+		    Menu();
+		else
 			break;
 	}
 	return 0;
